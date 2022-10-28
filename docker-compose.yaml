@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    volumes:
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+  blocktool:
+    image: 128992268287.dkr.ecr.us-east-1.amazonaws.com/blocktool:latest
+    ports:
+      - 4000:4000
