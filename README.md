@@ -8,11 +8,14 @@ docker system prune
 docker rmi 128992268287.dkr.ecr.us-east-1.amazonaws.com/blocktool:latest
 
 docker-compose --env-file .env up -d
+
 docker-compose --env-file mock.env up
 ```
 
 Docker compose commands:
 ```
+docker-compose stop
+
 docker compose restart
 ```
 
