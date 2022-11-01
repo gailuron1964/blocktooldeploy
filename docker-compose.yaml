@@ -7,9 +7,13 @@ services:
       - 443:443
     restart: always
     volumes:
-      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+      - $NGINX_CONF_PATH:/etc/nginx/conf.d/:ro
       - /etc/letsencrypt/:/etc/letsencrypt/:ro
   blocktool:
     image: 128992268287.dkr.ecr.us-east-1.amazonaws.com/blocktool:latest
     ports:
       - 4000:4000
+    environment:
+      - DB_PATH=/usr/app/db/db.sqlite
+    volumes:
+      - ./db:/usr/app/db:rw
