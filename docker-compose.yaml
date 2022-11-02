@@ -10,7 +10,7 @@ services:
       - $NGINX_CONF_PATH:/etc/nginx/conf.d/:ro
       - /etc/letsencrypt/:/etc/letsencrypt/:ro
   blocktool:
-    image: 128992268287.dkr.ecr.us-east-1.amazonaws.com/blocktool:2
+    image: 128992268287.dkr.ecr.us-east-1.amazonaws.com/blocktool:3
     ports:
       - 4000:4000
     environment:
