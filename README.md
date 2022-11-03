@@ -7,9 +7,9 @@ aws ecr get-login-password --region us-east-1 | docker login --username AWS --pa
 docker system prune
 docker rmi 128992268287.dkr.ecr.us-east-1.amazonaws.com/blocktool:latest
 
-docker-compose --env-file .env up -d
+docker-compose -f docker-compose.yaml -f docker-compose.prod.yaml up -d
 
-docker-compose --env-file mock.env up
+docker-compose -f docker-compose.yaml -f docker-compose.dev.yaml up
 ```
 
 Docker compose commands:

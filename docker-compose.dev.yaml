@@ -1,0 +1,9 @@
+services:
+  nginx:
+    volumes:
+      - ./nginx/mock-conf/:/etc/nginx/conf.d/:ro
+  blocktool:
+    build: 
+      context: ../blocktoolimage
+    environment:
+      - BLOCKTOOL_ENV=development
